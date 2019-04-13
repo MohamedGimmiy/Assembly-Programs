@@ -1,0 +1,31 @@
+.model small
+.data
+InDATA db 40
+        db 0
+        db 40 dup('$')
+
+.code
+Main Proc
+mov ax,@data
+mov ds,ax
+
+
+     
+
+mov ah,0AH
+mov dx,offset InDATA   ; ask user to enter numbers
+int 21h
+
+
+mov ah,02
+mov bh,00
+mov dl,5
+mov dh,5
+int 10h
+     
+mov ah,09
+mov dx,offset InDATA
+int 21h
+        
+MAIN ENDP
+END MAIN

@@ -1,0 +1,25 @@
+.model small
+.data
+    MSG db 50,51,52,53,54,55,56,57,48
+
+.code
+Main Proc
+mov ax,@data
+mov ds,ax
+
+MOV AH,2
+MOV DL,MSG
+INT 21H  
+MOV DL,MSG+1
+INT 21H
+MOV DL,MSG+2
+INT 21H  
+MOV DL,MSG+3
+INT 21H
+MOV DL,MSG+4
+INT 21H  
+MOV DL,MSG+5
+INT 21H
+
+MAIN ENDP
+END MAIN
